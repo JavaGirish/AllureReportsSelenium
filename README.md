@@ -2,7 +2,7 @@
 
 <p> Basic TestNG project with 3 methods implemented in src/test/java folder <br>
 Added custom allure reports listener which is used to monitor test execution results and update test execution status in console while running the suite <br>
-For tests thar are failing, detailed error description and snapshots will be attached in Allure Reports generated
+For tests that are failing, detailed error description and page snapshot will be attached in Allure Reports generated
 </p>
 
 <p> After cloning the project, do a maven clean and update the project <br>
