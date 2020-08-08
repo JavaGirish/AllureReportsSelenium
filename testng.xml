@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Allure TEst Suite">
+
+<suite name="Allure Reports Integration Test Suite">
 
 	<listeners>
-		<listener class-name="com.allure.listeners.AllureTestListener" />
+		<listener
+			class-name="com.allure.listeners.AllureTestListener" />
 	</listeners>
 
-	<test  name="Allure Reports Test">
+	<test name="Allure Reports Test">
 		<classes>
 			<class name="com.allure.tests.AllureTestClass" />
 		</classes>
-	</test> <!-- Test -->
-</suite> <!-- Suite -->
+	</test> 
+
+</suite> 

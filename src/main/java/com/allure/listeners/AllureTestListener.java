@@ -36,37 +36,37 @@ public class AllureTestListener implements ITestListener {
 	}
 
 	public void onStart(ITestContext iTestContext) {
-		System.out.println("I am in onStart method " + iTestContext.getName());
+		System.out.println("Starting with execution of Test Suite: " + iTestContext.getCurrentXmlTest().getSuite().getName() + "\n");
 		iTestContext.setAttribute("WebDriver", BasePage.getDriver());
 	}
 
 	public void onFinish(ITestContext iTestContext) {
-		System.out.println("I am in onFinish method " + iTestContext.getName());
+		System.out.println("Finished with execution of Test Suite: " + iTestContext.getCurrentXmlTest().getSuite().getName());
 	}
 
 	public void onTestStart(ITestResult iTestResult) {
-		System.out.println("I am in onTestStart method " + getTestMethodName(iTestResult) + " start");
+		System.out.println("Starting with execution of test: " + getTestMethodName(iTestResult) + " >> STARTED");
 	}
 
 	public void onTestSuccess(ITestResult iTestResult) {
-		System.out.println("I am in onTestSuccess method " + getTestMethodName(iTestResult) + " succeed");
+		System.out.println("Test has been Executed successfully: " + getTestMethodName(iTestResult) + " >> SUCCESS" + "\n");
 	}
 
 	public void onTestFailure(ITestResult iTestResult) {
-		System.out.println("I am in onTestFailure method " + getTestMethodName(iTestResult) + " failed");
+		System.out.println("Test Failed: " + getTestMethodName(iTestResult) + " >> FAIL");
 		Object testClass = iTestResult.getInstance();
 		WebDriver driver = BasePage.getDriver();
 		// Allure ScreenShotRobot and SaveTestLog
 		if (driver instanceof WebDriver) {
-			System.out.println("Screenshot captured for test case:" + getTestMethodName(iTestResult));
+			System.out.println("Screenshot captured for test case: " + getTestMethodName(iTestResult) + "\n" );
 			saveScreenshotPNG(driver);
 		}
 		// Save a log on allure.
-		saveTextLog(getTestMethodName(iTestResult) + " failed and screenshot taken!");		
+		saveTextLog(getTestMethodName(iTestResult) + " has failed and screenshot is taken!");		
 	}
 
 	public void onTestSkipped(ITestResult iTestResult) {
-		System.out.println("I am in onTestSkipped method " + getTestMethodName(iTestResult) + " skipped");
+		System.out.println("Skipped Test Method:  " + getTestMethodName(iTestResult) + " SKIPPED");
 	}
 
 	public void onTestFailedButWithinSuccessPercentage(ITestResult iTestResult) {
