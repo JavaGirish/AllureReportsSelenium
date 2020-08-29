@@ -12,6 +12,6 @@ After test execution, refresh the project you will see that an allure-results fo
   
  <p> To generate Allure Reports </p>
  Open windows or mac terminal and navigate to the allure-results folder path <br>
- Type the following command in terminal to generate allure reports: <br>
+ Type the following command in terminal to generate allure reports <br>
  allure serve allure-results
  
